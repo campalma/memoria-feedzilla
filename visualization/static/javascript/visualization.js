@@ -66,7 +66,6 @@ function update_dimensions(){
 	$("#canvas").height(new_height);
 	$("#time_axis").width(new_width);
 	$("#location_axis").height(new_height);
-	$("#info").height(new_height+axisHeight);
 	width = new_width;
 	height = new_height;
 	set_continent_axis();
@@ -122,13 +121,14 @@ function displayEvents(){
 		   				 .attr("cy", getLocationPosition(event.fields.continent_location))
 		   				 .attr("r", Math.log(event.fields.relevancy)*5)
 		   				 .attr("class", localAttribute)
+		   				 .attr("data-toggle", "modal")
 		   				 .on("click", function(){
 		   				 	if(lastClicked!=null){
 		   				 		$(lastClicked).css("stroke", strokeColor(events[$(lastClicked).attr("id")]))
 		   				 	}
 		   				 	$(this).css("stroke", "red");
 		   				 	lastClicked = this;
-
+		   				 	$("#info").modal({});
 		   				 	// get_cluster_locations(events[this.id].pk);
 		   				 	// get_cluster_info(events[this.id].pk);
 						 })

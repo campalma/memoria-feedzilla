@@ -10,26 +10,6 @@ a:hover {
 	margin-left: 50px;
 }
 
-#image{
-	height: 50%;
-	padding-bottom: 5px;
-	/* Firefox */
-	display:-moz-box;
-	-moz-box-orient:horizontal;
-	-moz-box-pack:center;
-	-moz-box-align:center;
-
-	/* Safari and Chrome */
-	display:-webkit-box;
-	-webkit-box-orient:horizontal;
-	-webkit-box-pack:center;
-	-webkit-box-align:center;
-}
-
-img{
-	max-height: 100%;
-}
-
 .label{
 	font-size: 13px;
 }
@@ -49,17 +29,6 @@ img{
 
 #topics-submit{
 	display: none;
-}
-
-#news{
-	height: 40%;
-	overflow-y: scroll;
-	padding-top: 10px;
-}
-
-#locations{
-	height: 10%;
-	overflow-y: scroll;
 }
 
 .time-triangle{
