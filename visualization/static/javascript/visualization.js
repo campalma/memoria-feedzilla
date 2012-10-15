@@ -75,7 +75,7 @@ function update_dimensions(){
 }
 
 function get_best_canvas_width(){
-	return $(window).width()/3*1.9-location_axis_width*2;
+	return $(window).width()*0.95-location_axis_width*2;
 }
 
 function get_best_canvas_height(){
@@ -129,8 +129,8 @@ function displayEvents(){
 		   				 	$(this).css("stroke", "red");
 		   				 	lastClicked = this;
 
-		   				 	get_cluster_locations(events[this.id].pk);
-		   				 	get_cluster_info(events[this.id].pk);
+		   				 	// get_cluster_locations(events[this.id].pk);
+		   				 	// get_cluster_info(events[this.id].pk);
 						 })
 						 .attr("onmouseover", "cluster_focus(this)")
 						 .attr("onmouseout", "cluster_unfocus(this)")
