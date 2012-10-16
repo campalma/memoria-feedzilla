@@ -105,14 +105,6 @@ function displayEvents(){
 	
 	$.each(events, function(key, event){
 
-		var localAttribute;
-		if(event.fields.is_local){
-			localAttribute = "local";
-		}
-		else{
-			localAttribute = "global";
-		}
-
 		article_color = "#"+getTopicColor(event.fields.topic);
 
 		var article = svg.append("circle")
@@ -120,7 +112,6 @@ function displayEvents(){
 		   				 .attr("cx", x(to_utc(event.fields.date)))
 		   				 .attr("cy", getLocationPosition(event.fields.continent_location))
 		   				 .attr("r", Math.log(event.fields.relevancy)*5)
-		   				 .attr("class", localAttribute)
 		   				 .attr("data-toggle", "modal")
 		   				 .on("click", function(){
 		   				 	if(lastClicked!=null){
@@ -244,12 +235,7 @@ function arrow_animation_out(arrow){
 }
 
 function strokeColor(event){
-	if(event.fields.isLocal){
-		return "";
-	}
-	else{
 		return "#333333";
-	}
 }
 
 function getLocationPosition(continents_array){

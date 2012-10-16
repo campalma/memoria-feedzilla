@@ -34,9 +34,8 @@ class Migration(SchemaMigration):
         # Adding model 'Cluster'
         db.create_table('visualization_cluster', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('image', self.gf('django.db.models.fields.URLField')(max_length=500)),
+            ('display_name', self.gf('django.db.models.fields.CharField')(max_length=500)),
             ('relevancy', self.gf('django.db.models.fields.IntegerField')()),
-            ('is_local', self.gf('django.db.models.fields.BooleanField')(default=False)),
             ('topic', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['visualization.Topic'])),
             ('added_date', self.gf('django.db.models.fields.DateTimeField')(auto_now_add=True, blank=True)),
             ('date', self.gf('django.db.models.fields.DateTimeField')()),
@@ -64,7 +63,6 @@ class Migration(SchemaMigration):
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=500)),
             ('url', self.gf('django.db.models.fields.URLField')(max_length=500)),
-            ('location', self.gf('django.db.models.fields.CharField')(max_length=200)),
             ('publisher', self.gf('django.db.models.fields.CharField')(max_length=200)),
             ('content', self.gf('django.db.models.fields.CharField')(max_length=1000)),
             ('published_date', self.gf('django.db.models.fields.DateTimeField')()),
@@ -104,7 +102,6 @@ class Migration(SchemaMigration):
             'cluster': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['visualization.Cluster']"}),
             'content': ('django.db.models.fields.CharField', [], {'max_length': '1000'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'location': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             'published_date': ('django.db.models.fields.DateTimeField', [], {}),
             'publisher': ('django.db.models.fields.CharField', [], {'max_length': '200'}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '500'}),
@@ -115,9 +112,8 @@ class Migration(SchemaMigration):
             'added_date': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'continent_location': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['visualization.Continent']", 'symmetrical': 'False'}),
             'date': ('django.db.models.fields.DateTimeField', [], {}),
+            'display_name': ('django.db.models.fields.CharField', [], {'max_length': '500'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.URLField', [], {'max_length': '500'}),
-            'is_local': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'location': ('django.db.models.fields.related.ManyToManyField', [], {'to': "orm['visualization.Location']", 'symmetrical': 'False'}),
             'relevancy': ('django.db.models.fields.IntegerField', [], {}),
             'topic': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['visualization.Topic']"})

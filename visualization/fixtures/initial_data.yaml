@@ -1,69 +1,258 @@
 - model: visualization.topic
   pk: 1
   fields:
-    name: Top Headlines
-    short_name: h
-    color: 90AEC6
+    name: Sports
+    short_name: 1314
+    color: d92cb2
 
 - model: visualization.topic
   pk: 2
   fields:
-    name: World
-    short_name: w
-    color: FF8F00
+    name: Art
+    short_name: 13
+    color: 246ee1
 
 - model: visualization.topic
   pk: 3
   fields:
-    name: Business
-    short_name: b
-    color: E7E4D3
+    name: Blogs
+    short_name: 21
+    color: a6b373
 
 - model: visualization.topic
   pk: 4
   fields:
-    name: Nation
-    short_name: n
-    color: D72729
+    name: Business
+    short_name: 22
+    color: d785ab
 
 - model: visualization.topic
   pk: 5
   fields:
-    name: Science and Technology
-    short_name: t
-    color: 471605
+    name: Celebrities
+    short_name: 5
+    color: 582c9f
 
 - model: visualization.topic
   pk: 6
   fields:
-    name: Elections
-    short_name: el
-    color: E3A6EC
+    name: Columnists
+    short_name: 588
+    color: d778bf
 
 - model: visualization.topic
   pk: 7
   fields:
-    name: Politics
-    short_name: p
-    color: DDC0B2
+    name: Entertainment
+    short_name: 6
+    color: 8db079
 
 - model: visualization.topic
   pk: 8
   fields:
-    name: Entertainment
-    short_name: e
-    color: 3D4C53
+    name: Events
+    short_name: 17
+    color: 2aa808
 
 - model: visualization.topic
   pk: 9
   fields:
-    name: Sports
-    short_name: s
-    color: 669966
+    name: Fun Stuff
+    short_name: 25
+    color: 6c6af9
 
 - model: visualization.topic
   pk: 10
   fields:
+    name: General
+    short_name: 1168
+    color: fab21b
+
+- model: visualization.topic
+  pk: 11
+  fields:
     name: Health
-    short_name: m
-    color: D13D94
+    short_name: 11
+    color: e5b8b3
+
+- model: visualization.topic
+  pk: 12
+  fields:
+    name: Hobbies
+    short_name: 14
+    color: 6d3f57
+
+- model: visualization.topic
+  pk: 13
+  fields:
+    name: Industry
+    short_name: 2
+    color: 68fcbf
+
+- model: visualization.topic
+  pk: 14
+  fields:
+    name: Internet
+    short_name: 28
+    color: 1101a0
+
+- model: visualization.topic
+  pk: 15
+  fields:
+    name: IT
+    short_name: 15
+    color: ae61a6
+
+- model: visualization.topic
+  pk: 16
+  fields:
+    name: Jobs
+    short_name: 33
+    color: 4d7a52
+
+- model: visualization.topic
+  pk: 17
+  fields:
+    name: Law
+    short_name: 591
+    color: e21daa
+
+- model: visualization.topic
+  pk: 18
+  fields:
+    name: Life Style
+    short_name: 20
+    color: cbb61e
+
+- model: visualization.topic
+  pk: 19
+  fields:
+    name: Music
+    short_name: 29
+    color: c72ed6
+
+- model: visualization.topic
+  pk: 20
+  fields:
+    name: Oddly Enough
+    short_name: 36
+    color: 21f8bc
+
+- model: visualization.topic
+  pk: 21
+  fields:
+    name: Politics
+    short_name: 3
+    color: fbae2a
+
+- model: visualization.topic
+  pk: 22
+  fields:
+    name: Products
+    short_name: 10
+    color: aae7aa
+
+- model: visualization.topic
+  pk: 23
+  fields:
+    name: Programming
+    short_name: 16
+    color: cc298f
+
+- model: visualization.topic
+  pk: 24
+  fields:
+    name: Religion And Spirituality
+    short_name: 18
+    color: 25890c
+
+- model: visualization.topic
+  pk: 25
+  fields:
+    name: Science
+    short_name: 8
+    color: 3bd98
+
+- model: visualization.topic
+  pk: 26
+  fields:
+    name: Shopping
+    short_name: 34
+    color: 899f44
+
+- model: visualization.topic
+  pk: 27
+  fields:
+    name: Society
+    short_name: 4
+    color: 79e3c0
+
+- model: visualization.topic
+  pk: 28
+  fields:
+    name: Sports
+    short_name: 27
+    color: 930d3f
+
+- model: visualization.topic
+  pk: 29
+  fields:
+    name: Technology
+    short_name: 30
+    color: 9e762
+
+- model: visualization.topic
+  pk: 30
+  fields:
+    name: Top Blogs
+    short_name: 31
+    color: f1f1e
+
+- model: visualization.topic
+  pk: 31
+  fields:
+    name: Top News
+    short_name: 26
+    color: f27743
+
+- model: visualization.topic
+  pk: 32
+  fields:
+    name: Travel
+    short_name: 23
+    color: 76447f
+
+- model: visualization.topic
+  pk: 33
+  fields:
+    name: Universities
+    short_name: 12
+    color: 61b14b
+
+- model: visualization.topic
+  pk: 34
+  fields:
+    name: USA
+    short_name: 7
+    color: e81b81
+
+- model: visualization.topic
+  pk: 35
+  fields:
+    name: Video
+    short_name: 590
+    color: 7615d1
+
+- model: visualization.topic
+  pk: 36
+  fields:
+    name: Video Games
+    short_name: 9
+    color: 88b23a
+
+- model: visualization.topic
+  pk: 37
+  fields:
+    name: World News
+    short_name: 19
+    color: c81a37

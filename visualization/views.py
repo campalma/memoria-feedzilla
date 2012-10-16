@@ -12,7 +12,7 @@ CLUSTERS_TO_VISUALIZE = 100
 
 # Collect news using some api
 def collect(request):
-	Article.collect_with_google()
+	Article.collect_with_feedzilla()
 
 # Visualize clusters
 def visualize(request):

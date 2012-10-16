@@ -7,7 +7,7 @@ APP_ID = "tCS56LbV34Eh0a2m8DvlsePMwKh2qoUj0_d5J8IqenbpAzi6i_qNPjSgE8398Dw-"
 
 def get_continent_from_string(string):
 	yahooUrl = 'http://wherein.yahooapis.com/v1/document'
-	data = urllib.urlencode({'documentContent': string.encode('ascii', 'ignore'), 'documentType': 'text/plain', 'appid': APP_ID, 'outputType': 'json'})
+	data = urllib.urlencode({'documentContent': string, 'documentType': 'text/plain', 'appid': APP_ID, 'outputType': 'json'})
 	response = urllib2.urlopen(yahooUrl, data)
 	json = response.read()
 	data = simplejson.loads(json)
@@ -33,7 +33,7 @@ def get_continent_from_string(string):
 
 def get_countries_from_string(string):
 	yahooUrl = 'http://wherein.yahooapis.com/v1/document'
-	data = urllib.urlencode({'documentContent': string.encode('ascii', 'ignore'), 'documentType': 'text/plain', 'appid': APP_ID, 'outputType': 'json'})
+	data = urllib.urlencode({'documentContent': string, 'documentType': 'text/plain', 'appid': APP_ID, 'outputType': 'json'})
 	response = urllib2.urlopen(yahooUrl, data)
 	json = response.read()
 	data = simplejson.loads(json)
