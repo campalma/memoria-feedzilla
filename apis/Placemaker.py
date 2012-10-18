@@ -34,7 +34,11 @@ def get_continent_from_string(string):
 def get_countries_from_string(string):
 	yahooUrl = 'http://wherein.yahooapis.com/v1/document'
 	data = urllib.urlencode({'documentContent': string, 'documentType': 'text/plain', 'appid': APP_ID, 'outputType': 'json'})
-	response = urllib2.urlopen(yahooUrl, data)
+	try:
+		response = urllib2.urlopen(yahooUrl, data)
+	except urllib2.HTTPError:
+		print "Placemaker Error"
+		return set([])
 	json = response.read()
 	data = simplejson.loads(json)
 	countries = []

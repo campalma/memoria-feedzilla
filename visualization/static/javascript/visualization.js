@@ -120,8 +120,8 @@ function displayEvents(){
 		   				 	$(this).css("stroke", "red");
 		   				 	lastClicked = this;
 		   				 	$("#info").modal({});
-		   				 	// get_cluster_locations(events[this.id].pk);
-		   				 	// get_cluster_info(events[this.id].pk);
+		   				 	get_cluster_info(events[this.id].pk);
+		   				 	get_cluster_locations(events[this.id].pk);
 						 })
 						 .attr("onmouseover", "cluster_focus(this)")
 						 .attr("onmouseout", "cluster_unfocus(this)")
@@ -452,13 +452,14 @@ function get_cluster_info(id){
 		url: "/api/clusternewsquery/"+id,
 		dataType: "json",
 		success: function(data){
-			d3.select("#image > img").remove();
-			d3.select("#image").append("img")
-							   .attr("src", events[$(lastClicked).attr("id")].fields.image)
 			$("#news").text("")
-			$.each(data, function(key, article){
-				$("#news").append(article.fields.published_date.replace("T", " ")+" <a target='blank' href='"+article.fields.url+"'>"+article.fields.title +" ["+article.fields.publisher+"]"+"</a><br/>");
-			});
+			article = data[0]
+			title = article.fields.title
+			content = article.fields.content
+			link = article.fields.url
+			$("#cluster-link").attr("href", link)
+			$("#cluster-title").text(title)
+			$("#cluster-body").text(content)
 		}
 	});
 }
@@ -468,9 +469,9 @@ function get_cluster_locations(id){
 		url: "/api/locationsquery/"+id,
 		dataType: "json",
 		success: function(data){
-
 			$("#locations")[0].innerHTML = "";
 			$.each(data, function(key, value){
+				console.log(value.fields.name)
 				$("#locations").append("<span class='badge badge-info'>"+value.fields.name+"</span> ");
 			});
 		}

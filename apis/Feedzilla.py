@@ -4,10 +4,10 @@ import mechanize
 from BeautifulSoup import BeautifulSoup
 from datetime import date
 
-#TOPICS = [1314,13,21,22,5,588,6,17,25,1168,11,14,2,28,15,33,591,20,29,36,3,10,16,18,8,34,4,27,30,31,26,23,12,7,590,9,19]
-TOPICS = [21,22,5]#,588,6,17,25,1168,11,14,2,28,15,33,591,20,29,36,3,10,16,18,8,34,4,27,30,31,26,23,12,7,590,9,19]
+#TOPICS = [1314,13,21,22,5,588,6,17,25,1168]#,11,14,2,28,15,33,591,20,29,36,3,10,16,18,8,34,4,27,30,31,26,23,12,7,590,9,19]
+TOPICS = [588,6,17,25,1168]
 API_URL = "http://api.feedzilla.com/v1/categories/%(topic)s/articles.json?since=%(since)s&count=%(count)s"
-COUNT = 5
+COUNT = 20
 
 def collect():
 	today = date.today()
