@@ -78,7 +78,7 @@ function get_best_canvas_width(){
 }
 
 function get_best_canvas_height(){
-	return $(window).height()-$("#topics-row").height()*3-axisHeight*2;
+	return $(window).height()-$("#topics-row").height()*2.3-axisHeight*2;
 }
 
 function displayEvents(){
@@ -111,7 +111,7 @@ function displayEvents(){
 		   				 .attr("id", key)
 		   				 .attr("cx", x(to_utc(event.fields.date)))
 		   				 .attr("cy", getLocationPosition(event.fields.continent_location))
-		   				 .attr("r", Math.log(event.fields.relevancy)*5)
+		   				 .attr("r", Math.log(event.fields.relevancy)*7)
 		   				 .attr("data-toggle", "modal")
 		   				 .on("click", function(){
 		   				 	if(lastClicked!=null){
@@ -460,6 +460,7 @@ function get_cluster_info(id){
 			$("#cluster-link").attr("href", link)
 			$("#cluster-title").text(title)
 			$("#cluster-body").text(content)
+			keywords_query(title);
 		}
 	});
 }
@@ -515,4 +516,25 @@ function remove_time_axis(){
 function to_utc(date_str){
 	var date = new Date(date_str);
 	return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),  date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
+}
+
+function keywords_query(text){
+	$("#keywords").text("");
+	text = unescape(encodeURIComponent(text));
+	$.ajax({
+		url: "http://query.yahooapis.com/v1/public/yql",
+		type: "POST",
+		data: {
+			format: "json",
+			q: "select * from contentanalysis.analyze where text='"+text+"'"
+		},
+		success: function(data){
+			entities = data.query.results.entities.entity
+			concepts = ""
+			$.each(entities, function(key, value){
+				concepts += value.text.content+" " 
+			});
+			$("#keywords").text(concepts);
+		}
+	});
 }
