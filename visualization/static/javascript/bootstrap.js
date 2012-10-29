@@ -1156,11 +1156,23 @@
     }
 
   , getPosition: function (inside) {
-      return $.extend({}, (inside ? {top: 0, left: 0} : this.$element.offset()), {
-        width: this.$element[0].offsetWidth
-      , height: this.$element[0].offsetHeight
-      })
-    }
+  var el = this.$element[0]
+  var width, height
+
+  if ('http://www.w3.org/2000/svg' === el.namespaceURI) {
+      var bbox = el.getBBox()
+      width = bbox.width
+      height = bbox.height
+  } else {
+      width = el.offsetWidth
+      height = el.offsetHeight
+  }
+
+  return $.extend({}, (inside ? {top: 0, left: 0} : this.$element.offset()), {
+    'width': width
+  , 'height': height
+  })
+}
 
   , getTitle: function () {
       var title

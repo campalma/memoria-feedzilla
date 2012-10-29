@@ -180,13 +180,17 @@ function draw_time_triangles(){
 }
 
 function cluster_focus(element){
+	var options = {"title": events[element.id].fields.display_name, "placement": "top", "trigger": "hover", "html": false};
+	$(element).tooltip(options);
 	var el = d3.select(element);
 	el.transition().style("stroke-width", "3")
+	$(element).tooltip("show");
 }
 
 function cluster_unfocus(element){
 	var el = d3.select(element);
-	el.transition().style("stroke-width", "2")
+	el.transition().style("stroke-width", "2");
+	$(element).tooltip("hide");
 }
 
 function displayAxis(minDate, maxDate){
