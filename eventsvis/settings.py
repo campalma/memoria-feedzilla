@@ -14,14 +14,14 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'd9mh0p9c7jr46i',                      # Or path to database file if using sqlite3.
-        'USER': 'jbptemxvqaqgsj',                      # Not used with sqlite3.
-        'PASSWORD': 'QNuZ-uQjdqmlfroVufzhnIQ_GE',                  # Not used with sqlite3.
-        'HOST': 'ec2-23-21-188-105.compute-1.amazonaws.com',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'das559jki8mo7f',
+    'HOST': 'ec2-23-21-209-58.compute-1.amazonaws.com',
+    'PORT': 5432,
+    'USER': 'dcqgsasikmsduh',
+    'PASSWORD': 'RfWshoBtjWiM0FFrUHwLucDMiZ'
+  }
 }
 
 # Local time zone for this installation. Choices can be found here:
